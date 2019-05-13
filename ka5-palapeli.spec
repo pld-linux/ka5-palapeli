@@ -1,14 +1,14 @@
-%define		kdeappsver	18.12.1
+%define		kdeappsver	19.04.1
 %define		qtver		5.9.0
 %define		kaname		palapeli
 Summary:	Puzzle game
 Name:		ka5-%{kaname}
-Version:	18.12.1
+Version:	19.04.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications/Games
 Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	a40fd467cc1c9559e3a7296ba7e5b5ca
+# Source0-md5:	81117771c359a0b6abdb9682bdd534aa
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Concurrent-devel
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -69,6 +69,7 @@ install -d build
 cd build
 %cmake \
 	-G Ninja \
+	-DHTML_INSTALL_DIR=%{_kdedocdir} \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
 	..
 %ninja_build
@@ -87,6 +88,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
+/etc/xdg/palapeli.categories
 /etc/xdg/palapeli-collectionrc
 %attr(755,root,root) %{_bindir}/palapeli
 %ghost %{_libdir}/libpala.so.0
