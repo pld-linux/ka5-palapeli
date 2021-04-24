@@ -1,14 +1,14 @@
-%define		kdeappsver	20.12.3
+%define		kdeappsver	21.04.0
 %define		qtver		5.9.0
 %define		kaname		palapeli
 Summary:	Puzzle game
 Name:		ka5-%{kaname}
-Version:	20.12.3
+Version:	21.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications/Games
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	17add7171aad0c6f7f129fbc91406897
+# Source0-md5:	40e413c75309d342684d785e8fa9e588
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Concurrent-devel
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -91,10 +91,7 @@ rm -rf $RPM_BUILD_ROOT
 /etc/xdg/palapeli-collectionrc
 %attr(755,root,root) %{_bindir}/palapeli
 %ghost %{_libdir}/libpala.so.0
-%{_libdir}/libpala.so.0.*.*
-%{_libdir}/qt5/plugins/palapeli_goldbergslicer.so
-%{_libdir}/qt5/plugins/palapeli_jigsawslicer.so
-%{_libdir}/qt5/plugins/palapeli_rectslicer.so
+%{_libdir}/libpala.so.*.*.*
 %{_libdir}/qt5/plugins/palathumbcreator.so
 %{_desktopdir}/org.kde.palapeli.desktop
 %{_iconsdir}/hicolor/128x128/apps/palapeli.png
@@ -111,21 +108,17 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/64x64/mimetypes/application-x-palapeli.png
 %{_datadir}/knotifications5/palapeli.notifyrc
 %{_datadir}/kservices5/ServiceMenus/palapeli_servicemenu.desktop
-%{_datadir}/kservices5/palapeli_goldbergslicer.desktop
-%{_datadir}/kservices5/palapeli_jigsawslicer.desktop
-%{_datadir}/kservices5/palapeli_rectslicer.desktop
 %{_datadir}/kservices5/palathumbcreator.desktop
-%{_datadir}/kservicetypes5/libpala-slicerplugin.desktop
-%dir %{_datadir}/kxmlgui5/palapeli
-%{_datadir}/kxmlgui5/palapeli/palapeliui.rc
 %{_datadir}/metainfo/org.kde.palapeli.appdata.xml
 %{_datadir}/mime/packages/palapeli-mimetypes.xml
 %{_datadir}/palapeli
 %{_datadir}/qlogging-categories5/palapeli.categories
+%attr(755,root,root) %{_libdir}/qt5/plugins/palapelislicers/palapeli_goldbergslicer.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/palapelislicers/palapeli_jigsawslicer.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/palapelislicers/palapeli_rectslicer.so
 
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/Pala
-%{_includedir}/libpala
 %{_libdir}/libpala.so
-%{_libdir}/libpala
+%{_libdir}/cmake/Pala
