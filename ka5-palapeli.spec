@@ -4,7 +4,7 @@
 Summary:	Puzzle game
 Name:		ka5-%{kaname}
 Version:	21.04.0
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications/Games
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
@@ -113,6 +113,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/mime/packages/palapeli-mimetypes.xml
 %{_datadir}/palapeli
 %{_datadir}/qlogging-categories5/palapeli.categories
+%dir %{_libdir}/qt5/plugins/palapelislicers
 %attr(755,root,root) %{_libdir}/qt5/plugins/palapelislicers/palapeli_goldbergslicer.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/palapelislicers/palapeli_jigsawslicer.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/palapelislicers/palapeli_rectslicer.so
