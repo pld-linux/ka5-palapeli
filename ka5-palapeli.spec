@@ -1,14 +1,14 @@
-%define		kdeappsver	21.04.0
+%define		kdeappsver	21.04.1
 %define		qtver		5.9.0
 %define		kaname		palapeli
 Summary:	Puzzle game
 Name:		ka5-%{kaname}
-Version:	21.04.0
-Release:	2
+Version:	21.04.1
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications/Games
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	40e413c75309d342684d785e8fa9e588
+# Source0-md5:	c33251c2b909ea3324c0c28e4c820b02
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Concurrent-devel
 BuildRequires:	Qt5Core-devel >= %{qtver}
