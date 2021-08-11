@@ -48,6 +48,12 @@ that genre, you are not limited to aligning pieces on imaginary grids.
 The pieces are freely moveable. Also, Palapeli features real
 persistency, i.e. everything you do is saved on your disk immediately.
 
+%description -l pl.UTF-8
+Palapeli jest jednosobową grą w układanie puzli. W odróżnieniu do
+innych gier z tego gatunku pojedyncze puzle nie są "przywiązane"
+do siatki. Możesz je dowolnie przesuwać. Jedną z cech Palapeli jest
+zapis wszystkich ruchów w czasie rzeczywistym na dysku.
+
 %package devel
 Summary:	Header files for %{kaname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kaname}
