@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	22.08.2
+%define		kdeappsver	22.08.3
 %define		qtver		5.15.2
 %define		kaname		palapeli
 Summary:	Puzzle game
 Name:		ka5-%{kaname}
-Version:	22.08.2
+Version:	22.08.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications/Games
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	6f2da3e4a53519d9f7fcd1bdeca997a5
+# Source0-md5:	2bb0c49515a016b825b850d993675189
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Concurrent-devel
 BuildRequires:	Qt5Core-devel >= %{qtver}
