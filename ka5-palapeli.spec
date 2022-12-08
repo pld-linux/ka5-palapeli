@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	22.08.3
+%define		kdeappsver	22.12.0
 %define		qtver		5.15.2
 %define		kaname		palapeli
 Summary:	Puzzle game
 Name:		ka5-%{kaname}
-Version:	22.08.3
+Version:	22.12.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications/Games
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	2bb0c49515a016b825b850d993675189
+# Source0-md5:	3d38cb1726d8e1aee70c6c23577532f0
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Concurrent-devel
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -53,8 +53,8 @@ persistency, i.e. everything you do is saved on your disk immediately.
 
 %description -l pl.UTF-8
 Palapeli jest jednosobową grą w układanie puzli. W odróżnieniu do
-innych gier z tego gatunku pojedyncze puzle nie są "przywiązane"
-do siatki. Możesz je dowolnie przesuwać. Jedną z cech Palapeli jest
+innych gier z tego gatunku pojedyncze puzle nie są "przywiązane" do
+siatki. Możesz je dowolnie przesuwać. Jedną z cech Palapeli jest
 zapis wszystkich ruchów w czasie rzeczywistym na dysku.
 
 %package devel
@@ -107,7 +107,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/palapeli
 %ghost %{_libdir}/libpala.so.0
 %{_libdir}/libpala.so.*.*.*
-%{_libdir}/qt5/plugins/palathumbcreator.so
 %{_desktopdir}/org.kde.palapeli.desktop
 %{_iconsdir}/hicolor/128x128/apps/palapeli.png
 %{_iconsdir}/hicolor/128x128/mimetypes/application-x-palapeli.png
@@ -122,16 +121,16 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/64x64/apps/palapeli.png
 %{_iconsdir}/hicolor/64x64/mimetypes/application-x-palapeli.png
 %{_datadir}/knotifications5/palapeli.notifyrc
-%{_datadir}/kservices5/ServiceMenus/palapeli_servicemenu.desktop
-%{_datadir}/kservices5/palathumbcreator.desktop
 %{_datadir}/metainfo/org.kde.palapeli.appdata.xml
 %{_datadir}/mime/packages/palapeli-mimetypes.xml
 %{_datadir}/palapeli
 %{_datadir}/qlogging-categories5/palapeli.categories
 %dir %{_libdir}/qt5/plugins/palapelislicers
-%attr(755,root,root) %{_libdir}/qt5/plugins/palapelislicers/palapeli_goldbergslicer.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/palapelislicers/palapeli_jigsawslicer.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/palapelislicers/palapeli_rectslicer.so
+%{_libdir}/qt5/plugins/palapelislicers/palapeli_goldbergslicer.so
+%{_libdir}/qt5/plugins/palapelislicers/palapeli_jigsawslicer.so
+%{_libdir}/qt5/plugins/palapelislicers/palapeli_rectslicer.so
+%{_libdir}/qt5/plugins/kf5/thumbcreator/palathumbcreator.so
+%{_datadir}/kio/servicemenus/palapeli_servicemenu.desktop
 
 %files devel
 %defattr(644,root,root,755)
