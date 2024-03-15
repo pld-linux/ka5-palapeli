@@ -1,44 +1,44 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.01.95
+%define		kdeappsver	23.08.4
 %define		qtver		5.15.2
 %define		kaname		palapeli
 Summary:	Puzzle game
 Name:		ka5-%{kaname}
-Version:	24.01.95
-Release:	0.1
+Version:	23.08.4
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications/Games
-Source0:	https://download.kde.org/unstable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	7ba0ab5691e48dcc3b8509764c7e21e4
+Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	3bf75234136a842e6107951b6f612cc9
 URL:		http://www.kde.org/
-BuildRequires:	Qt6Concurrent-devel
-BuildRequires:	Qt6Core-devel >= %{qtver}
-BuildRequires:	Qt6Gui-devel >= 5.11.1
-BuildRequires:	Qt6Qml-devel >= 5.11.1
-BuildRequires:	Qt6Quick-devel >= 5.11.1
-BuildRequires:	Qt6Svg-devel
-BuildRequires:	Qt6Widgets-devel
+BuildRequires:	Qt5Concurrent-devel
+BuildRequires:	Qt5Core-devel >= %{qtver}
+BuildRequires:	Qt5Gui-devel >= 5.11.1
+BuildRequires:	Qt5Qml-devel >= 5.11.1
+BuildRequires:	Qt5Quick-devel >= 5.11.1
+BuildRequires:	Qt5Svg-devel
+BuildRequires:	Qt5Widgets-devel
 BuildRequires:	cmake >= 3.20
 BuildRequires:	gettext-devel
 BuildRequires:	ka5-libkdegames-devel >= %{kdeappsver}
-BuildRequires:	kf6-extra-cmake-modules >= 5.53.0
-BuildRequires:	kf6-karchive-devel >= 5.30.0
-BuildRequires:	kf6-kcompletion-devel >= 5.30.0
-BuildRequires:	kf6-kconfig-devel >= 5.30.0
-BuildRequires:	kf6-kconfigwidgets-devel >= 5.30.0
-BuildRequires:	kf6-kcoreaddons-devel >= 5.30.0
-BuildRequires:	kf6-kcrash-devel >= 5.30.0
-BuildRequires:	kf6-ki18n-devel >= 5.30.0
-BuildRequires:	kf6-kio-devel >= 5.30.0
-BuildRequires:	kf6-kitemviews-devel >= 5.30.0
-BuildRequires:	kf6-knotifications-devel >= 5.30.0
-BuildRequires:	kf6-kservice-devel >= 5.30.0
-BuildRequires:	kf6-kwidgetsaddons-devel >= 5.30.0
-BuildRequires:	kf6-kxmlgui-devel >= 5.30.0
+BuildRequires:	kf5-extra-cmake-modules >= 5.53.0
+BuildRequires:	kf5-karchive-devel >= 5.30.0
+BuildRequires:	kf5-kcompletion-devel >= 5.30.0
+BuildRequires:	kf5-kconfig-devel >= 5.30.0
+BuildRequires:	kf5-kconfigwidgets-devel >= 5.30.0
+BuildRequires:	kf5-kcoreaddons-devel >= 5.30.0
+BuildRequires:	kf5-kcrash-devel >= 5.30.0
+BuildRequires:	kf5-ki18n-devel >= 5.30.0
+BuildRequires:	kf5-kio-devel >= 5.30.0
+BuildRequires:	kf5-kitemviews-devel >= 5.30.0
+BuildRequires:	kf5-knotifications-devel >= 5.30.0
+BuildRequires:	kf5-kservice-devel >= 5.30.0
+BuildRequires:	kf5-kwidgetsaddons-devel >= 5.30.0
+BuildRequires:	kf5-kxmlgui-devel >= 5.30.0
 BuildRequires:	ninja
-BuildRequires:	qt6-build >= %{qtver}
+BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	shared-mime-info
 BuildRequires:	tar >= 1:1.22
@@ -104,20 +104,30 @@ rm -rf $RPM_BUILD_ROOT
 /etc/xdg/palapeli-collectionrc
 %attr(755,root,root) %{_bindir}/palapeli
 %ghost %{_libdir}/libpala.so.0
-%attr(755,root,root) %{_libdir}/libpala.so.*.*
+%{_libdir}/libpala.so.*.*.*
 %{_desktopdir}/org.kde.palapeli.desktop
-%{_iconsdir}/hicolor/*x*/apps/palapeli.png
-%{_iconsdir}/hicolor/*x*/mimetypes/application-x-palapeli.png
-%{_datadir}/knotifications6/palapeli.notifyrc
+%{_iconsdir}/hicolor/128x128/apps/palapeli.png
+%{_iconsdir}/hicolor/128x128/mimetypes/application-x-palapeli.png
+%{_iconsdir}/hicolor/16x16/apps/palapeli.png
+%{_iconsdir}/hicolor/16x16/mimetypes/application-x-palapeli.png
+%{_iconsdir}/hicolor/24x24/apps/palapeli.png
+%{_iconsdir}/hicolor/24x24/mimetypes/application-x-palapeli.png
+%{_iconsdir}/hicolor/32x32/apps/palapeli.png
+%{_iconsdir}/hicolor/32x32/mimetypes/application-x-palapeli.png
+%{_iconsdir}/hicolor/48x48/apps/palapeli.png
+%{_iconsdir}/hicolor/48x48/mimetypes/application-x-palapeli.png
+%{_iconsdir}/hicolor/64x64/apps/palapeli.png
+%{_iconsdir}/hicolor/64x64/mimetypes/application-x-palapeli.png
+%{_datadir}/knotifications5/palapeli.notifyrc
 %{_datadir}/metainfo/org.kde.palapeli.appdata.xml
 %{_datadir}/mime/packages/palapeli-mimetypes.xml
 %{_datadir}/palapeli
-%{_datadir}/qlogging-categories6/palapeli.categories
-%dir %{_libdir}/qt6/plugins/palapelislicers
-%attr(755,root,root) %{_libdir}/qt6/plugins/palapelislicers/palapeli_goldbergslicer.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/palapelislicers/palapeli_jigsawslicer.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/palapelislicers/palapeli_rectslicer.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/thumbcreator/palathumbcreator.so
+%{_datadir}/qlogging-categories5/palapeli.categories
+%dir %{_libdir}/qt5/plugins/palapelislicers
+%{_libdir}/qt5/plugins/palapelislicers/palapeli_goldbergslicer.so
+%{_libdir}/qt5/plugins/palapelislicers/palapeli_jigsawslicer.so
+%{_libdir}/qt5/plugins/palapelislicers/palapeli_rectslicer.so
+%{_libdir}/qt5/plugins/kf5/thumbcreator/palathumbcreator.so
 %{_datadir}/kio/servicemenus/palapeli_servicemenu.desktop
 
 %files devel
